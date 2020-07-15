@@ -1,7 +1,7 @@
 <template>
    <div id = "wrapper">
       <div id="app"  class="control">
-         <label for="cars">Choose file type to Upload  </label>
+         <label for="cars">Select file type to Upload  </label>
          &nbsp;
          <select  id="uploadList"  @change="onChange($event)">
             <option value=""> - Select -</option>
