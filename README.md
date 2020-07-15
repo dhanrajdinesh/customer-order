@@ -38,7 +38,7 @@ once application successfully loaded there will be thow links to navigate.
 
 Search Orders Screen:
    - This is a Search screen for the orders.
-   - if you provide "Order Name" and "Date Range", then show the filter data.
+   - if you provide "Order Name" and "Date Range", and click on then show the filter data.
    - "Order Name" and "Date Range" both are optional values.
    - We can see maximum 5 orders per page.
    - Nvigate page by clicking on the page numbers below the table.
