@@ -4,9 +4,9 @@
          <button class="button" v-on:click="getOrders" >Search</button> <input type = 'text' v-model="searchValue" style="width: 1000px;" placeholder="Search Order or Product">
          <br/>
          Created Date
-         <div>
+         <section>
             <date-picker v-model="date"  lang="en" range type="date" format="YYYY-MM-DD" valueType="YYYY-MM-DD" placeholder="Start date - End date"></date-picker>
-         </div>
+         </section>
       </div>
       <br/>
       <div class="offset">
@@ -16,7 +16,7 @@
                   <th> Order Name </th>
                   <th> Customer Company name </th>
                   <th> Customer name </th>
-                  <th> Order date </th>
+                  <th v-on:click="myFilter" id="p">Order date &#8645;</th>
                   <th> Delivered amount </th>
                   <th> Total Amount  </th>
                </tr>
@@ -78,7 +78,8 @@ export default {
       date:'',
       datePath:'',
       URL:'',
-      path : this.$baseUrl + '/api/v1/orders'		
+      path : this.$baseUrl + '/api/v1/orders',
+      flag: false
 		};
 	},
 	methods:{
@@ -112,7 +113,23 @@ export default {
           } else {
             this.posts = this.tempData
           }
-		},
+      },
+      myFilter() {
+          this.isActive = !this.isActive;
+          if (this.posts != "") {
+              this.page = 1;
+              this.pages = [];
+              if (this.isActive == true) {
+                  this.posts.sort((a, b) => {
+                      return new Date(a.OrderDate) - new Date(b.OrderDate);
+                  });
+              } else {
+                    this.posts.sort((a, b) => {
+                        return new Date(b.OrderDate) - new Date(a.OrderDate);
+                    });
+              }
+         }
+     },
 		setPages () {
 			let numberOfPages = Math.ceil(this.posts.length / this.perPage);
 			for (let index = 1; index <= numberOfPages; index++) {
@@ -160,10 +177,9 @@ button.page-link {
   margin: 20px auto;  
 }
 
-.bi{
- cursor : pointer;   
- color: green;
-}
+#p {
+    cursor : pointer;
+ }
 #result {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
