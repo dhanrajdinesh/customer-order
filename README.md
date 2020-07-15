@@ -32,17 +32,21 @@ once application successfully loaded there will be thow links to navigate.
 * Search Orders
 * Uploads
 
-Search Orders Screen:
+Orders Search Screen:
+
    - This is a Search screen for the orders.
-   - if you provide "Order Name" and "Date Range", and click on then show the filter data.
+   - Provide "Order Name" and "Date Range", and click on then Search button to show the filter data.
    - "Order Name" and "Date Range" both are optional values.
    - We can see maximum 5 orders per page.
    - Nvigate page by clicking on the page numbers below the table.
+   - Click on "Order date" column to sort the records. 
+
 Uploads Screen:
-   - This Screen is used to upload files. (Backend API will persist into the PostGres DB)
+
+   - This Screen is used to upload files. (Backend API will persist data into the PostGres DB)
    - Select the file content type from the dropdown list.
-   - Click on Choose file to browse the file. (supports CSV formate).
-   - It will show a popup if the Upload is successfull.
+   - Click on Choose file to browse the file. (supports CSV format).
+   - It will show a po-pup if the Upload is successfull.
    
 ```
 
