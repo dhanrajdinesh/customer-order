@@ -3,6 +3,18 @@
 ## Project setup
 ```
 npm install
+
+npm install -g @vue/cli
+
+npm install vue-router --save
+
+npm install axios --save
+
+npm install bootstrap --save
+
+npm install jQuery --save
+
+npm install vue2-datepicker --save
 ```
 
 ### Compiles and hot-reloads for development
